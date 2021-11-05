@@ -36,7 +36,7 @@
     <string name="step2">Step 2</string>
     <string name="step3">Step 3</string>
     <string name="submit_u">SUBMIT</string>
-    <string name="OK">OK</string>
+    <string name="ok">OK</string>
     <string name="cancel">Cancel</string>
     <string name="add_your_first_device">ADD YOUR FIRST DEVICE</string>
     <string name="device_name">Device Name</string>
@@ -97,7 +97,6 @@
     <!-- =====Original===== -->
 
     <!--common-->
-    <string name="ok">OK</string>
     <string name="website_format_hint">"e.g: https://wio.seeed.io or https://192.168.31.2"</string>
     <string name="hint_get_host_address">"Get your server's host address…"</string>
     <string name="setup_switch_international">Switch to International</string>
