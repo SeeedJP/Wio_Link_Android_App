@@ -161,7 +161,7 @@ public class Step01GoReadyActivity extends BaseActivity {
                     }
                     wifiManager.startScan();
                 } else {
-                    DialogUtils.showErrorDialog(this, getString(R.string.add_device_step01_err_not_connect_wifi), getString(R.string.dialog_btn_OK), "", getString(R.string.link_to_wifi), null);
+                    DialogUtils.showErrorDialog(this, getString(R.string.not_connect_wifi), getString(R.string.ok), "", getString(R.string.msg_not_connect_wifi), null);
                 }
                 break;
 

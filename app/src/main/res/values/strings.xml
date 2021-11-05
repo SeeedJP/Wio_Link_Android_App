@@ -36,6 +36,7 @@
     <string name="step2">Step 2</string>
     <string name="step3">Step 3</string>
     <string name="submit_u">SUBMIT</string>
+    <string name="OK">OK</string>
     <string name="cancel">Cancel</string>
     <string name="add_your_first_device">ADD YOUR FIRST DEVICE</string>
     <string name="device_name">Device Name</string>
@@ -43,6 +44,7 @@
     <string name="trash_box">Remove</string>
     <string name="try_again">TRY AGAIN</string>
     <string name="connection_error">Connection Error</string>
+    <string name="not_connect_wifi">You are not connected to Wi-fi</string>
 
     <!--Message-->
     <string name="msg_select_type_of_device">CHOOSE A DEVICE TO START</string>
@@ -58,6 +60,7 @@
     <string name="msg_update_firmware_in_progress">Preparing Server</string>
     <string name="msg_updated_firmware">Firmware Updated!</string>
     <string name="msg_error_1044">Please check your internet connection and try again.\nIf still can’t solve the problem, please try FAQ section and contact us there. \n\nError code:1044</string>
+    <string name="msg_not_connect_wifi">Please connect to Wi-Fi network before you start</string>
 
     <!--Menu-->
     <string name="menu_grove_list">Groves</string>
@@ -106,10 +109,7 @@
     <!--SelectServerActivity.java-->
     <string name="website_format_error">hmmm..website looks wrong..</string>
     <!--Step01GoReadyActivity.java-->
-    <string name="dialog_btn_OK">OK</string>
-    <string name="link_to_wifi">Please connect to Wi-Fi network before you start</string>
     <string name="add_device_step01_progress_connect_server">Connect server…</string>
-    <string name="add_device_step01_err_not_connect_wifi">You are not connected to Wi-fi</string>
     <!--Step02WifiListActivity.java-->
     <string name="dialog_btn_tryAgain">TRY AGAIN</string>
     <string name="dialog_btn_NEXT">NEXT</string>

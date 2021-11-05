@@ -23,6 +23,7 @@
     <string name="step2">ステップ2</string>
     <string name="step3">ステップ3</string>
     <string name="submit_u">OK</string>
+    <string name="OK">OK</string>
     <string name="cancel">キャンセル</string>
     <string name="add_your_first_device">デバイスを追加</string>
     <string name="device_name">デバイス名</string>
@@ -30,6 +31,7 @@
     <string name="trash_box">ゴミ箱</string>
     <string name="try_again">再試行</string>
     <string name="connection_error">接続エラー</string>
+    <string name="not_connect_wifi">Wi-Fi未接続</string>
 
     <!--Message-->
     <string name="msg_select_type_of_device">追加するデバイスを選択してください。</string>
@@ -45,6 +47,7 @@
     <string name="msg_update_firmware_in_progress">ファームウェアを更新中</string>
     <string name="msg_updated_firmware">ファームウェアを更新しました。</string>
     <string name="msg_error_1044">インターネットの接続状況を確認して、もう一度お試しください。\n\nError code:1044</string>
+    <string name="msg_not_connect_wifi">Wi-Fiに接続してから開始してください。</string>
 
     <!--Menu-->
     <string name="menu_grove_list">Grove一覧</string>
