@@ -45,7 +45,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="Copy"
+                    android:text="@string/copy"
                     android:textColor="#FF3A4B71"
                     android:textSize="12sp"
                     app:cusTextFont="@string/Proxima_Nova_Regular" />
@@ -76,7 +76,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="Browser"
+                    android:text="@string/browser"
                     android:textColor="#FF3A4B71"
                     android:textSize="12sp"
                     app:cusTextFont="@string/Proxima_Nova_Regular" />
@@ -107,7 +107,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="Mail"
+                    android:text="@string/mail"
                     android:textColor="#FF3A4B71"
                     android:textSize="12sp"
                     app:cusTextFont="@string/Proxima_Nova_Regular" />
@@ -139,7 +139,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="6dp"
-                    android:text="Message"
+                    android:text="@string/message"
                     android:textColor="#FF3A4B71"
                     android:textSize="12sp"
                     app:cusTextFont="@string/Proxima_Nova_Regular" />
@@ -294,9 +294,9 @@
         android:layout_width="match_parent"
         android:layout_height="50dp"
         android:layout_alignParentBottom="true"
-        android:gravity="center"
         android:background="#ffffff"
-        android:text="Cancel"
+        android:gravity="center"
+        android:text="@string/cancel"
         android:textColor="#FF3A4B71"
         android:textSize="14sp"
         app:cusTextFont="@string/Proxima_Nova_Semibold" />

@@ -33,6 +33,10 @@
     <string name="connection_error">接続エラー</string>
     <string name="not_connect_wifi">Wi-Fi未接続</string>
     <string name="ask_switch_wifi">Wi-Fiを切替</string>
+    <string name="copy">コピー</string>
+    <string name="browser">ブラウザ</string>
+    <string name="mail">メール</string>
+    <string name="message">メッセージ</string>
 
     <!--Message-->
     <string name="msg_select_type_of_device">追加するデバイスを選択してください。</string>

@@ -46,6 +46,10 @@
     <string name="connection_error">Connection Error</string>
     <string name="not_connect_wifi">You are not connected to Wi-fi</string>
     <string name="ask_switch_wifi">Sure to switch Wi-Fi network?</string>
+    <string name="copy">Copy</string>
+    <string name="browser">Browser</string>
+    <string name="mail">Mail</string>
+    <string name="message">Message</string>
 
     <!--Message-->
     <string name="msg_select_type_of_device">CHOOSE A DEVICE TO START</string>
