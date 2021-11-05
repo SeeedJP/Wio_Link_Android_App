@@ -311,7 +311,7 @@ public class Step04ApConnectActivity extends BaseActivity {
         runOnUiThread(new Runnable() {
             @Override
             public void run() {
-                DialogUtils.showErrorDialog(Step04ApConnectActivity.this, "Send order error", "TRY AGAIN", "Cancel", "Please check your internet connection and try again.\r\n" +
+                DialogUtils.showErrorDialog(Step04ApConnectActivity.this, "Send order error", getString(R.string.try_again), getString(R.string.cancel), "Please check your internet connection and try again.\r\n" +
                         "If still can’t slove the problem, please try FAQ section and contact us there. \r\n\r\n" +
                         "Error code:1041", new DialogUtils.OnErrorButtonClickListenter() {
                     @Override
@@ -368,7 +368,7 @@ public class Step04ApConnectActivity extends BaseActivity {
                     runOnUiThread(new Runnable() {
                         @Override
                         public void run() {
-                            DialogUtils.showErrorDialog(Step04ApConnectActivity.this, "Fail connect to Wi-Fi", "TRY AGAIN", "Setting", "Please check your internet connection and try again.\r\n" +
+                            DialogUtils.showErrorDialog(Step04ApConnectActivity.this, "Fail connect to Wi-Fi", getString(R.string.try_again), "Setting", "Please check your internet connection and try again.\r\n" +
                                     "Or click \"Setting\" go to manual settings view.\r\n\r\nError code:1043", new DialogUtils.OnErrorButtonClickListenter() {
                                 @Override
                                 public void okClick() {
@@ -506,8 +506,7 @@ public class Step04ApConnectActivity extends BaseActivity {
                     setDefaultName();
                 }
             } else {
-                DialogUtils.showErrorDialog(Step04ApConnectActivity.this, "Connection Error", "TRY AGAIN", "Cancel", "Please check your internet connection and try again.\r\n" +
-                        "If still can’t slove the problem, please try FAQ section and contact us there. \r\n\r\nError code:1044", new DialogUtils.OnErrorButtonClickListenter() {
+                DialogUtils.showErrorDialog(Step04ApConnectActivity.this, getString(R.string.connection_error), getString(R.string.try_again), getString(R.string.cancel), getString(R.string.msg_error_1044), new DialogUtils.OnErrorButtonClickListenter() {
                     @Override
                     public void okClick() {
                         MobclickAgent.onEvent(Step04ApConnectActivity.this, "17005");

@@ -28,6 +28,8 @@
     <string name="device_name">デバイス名</string>
     <string name="data_exchange_server">データ交換サーバー</string>
     <string name="trash_box">ゴミ箱</string>
+    <string name="try_again">再試行</string>
+    <string name="connection_error">接続エラー</string>
 
     <!--Message-->
     <string name="msg_select_type_of_device">追加するデバイスを選択してください。</string>
@@ -42,6 +44,7 @@
     <string name="msg_drag_and_drop_grove_to_port">Groveをコネクタへドラッグ&amp;ドロップしてください。</string>
     <string name="msg_update_firmware_in_progress">ファームウェアを更新中</string>
     <string name="msg_updated_firmware">ファームウェアを更新しました。</string>
+    <string name="msg_error_1044">インターネットの接続状況を確認して、もう一度お試しください。\n\nError code:1044</string>
 
     <!--Menu-->
     <string name="menu_grove_list">Grove一覧</string>

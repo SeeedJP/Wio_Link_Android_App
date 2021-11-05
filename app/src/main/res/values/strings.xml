@@ -41,6 +41,8 @@
     <string name="device_name">Device Name</string>
     <string name="data_exchange_server">Customized Server</string>
     <string name="trash_box">Remove</string>
+    <string name="try_again">TRY AGAIN</string>
+    <string name="connection_error">Connection Error</string>
 
     <!--Message-->
     <string name="msg_select_type_of_device">CHOOSE A DEVICE TO START</string>
@@ -55,6 +57,7 @@
     <string name="msg_drag_and_drop_grove_to_port">Drag and drop Groves you need to below ports</string>
     <string name="msg_update_firmware_in_progress">Preparing Server</string>
     <string name="msg_updated_firmware">Firmware Updated!</string>
+    <string name="msg_error_1044">Please check your internet connection and try again.\nIf still can’t solve the problem, please try FAQ section and contact us there. \n\nError code:1044</string>
 
     <!--Menu-->
     <string name="menu_grove_list">Groves</string>

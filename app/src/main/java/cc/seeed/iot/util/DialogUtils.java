@@ -487,7 +487,7 @@ public class DialogUtils {
         FontTextView mTvSubmit = (FontTextView) view.findViewById(R.id.mTvSubmit);
 
         if (!TextUtils.isEmpty(title)) {
-            dialog.setTitle(title);
+            mTvTitle.setText(title);
         } else {
             mTvTitle.setVisibility(View.GONE);
         }

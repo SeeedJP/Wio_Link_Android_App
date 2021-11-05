@@ -257,7 +257,7 @@ public class Step02WifiListActivity extends BaseActivity
                         @Override
                         public void run() {
                             if (!isFinishing()) {
-                                DialogUtils.showErrorDialog(Step02WifiListActivity.this, "Fail connect to Wi-Fi", getString(R.string.dialog_btn_tryAgain),
+                                DialogUtils.showErrorDialog(Step02WifiListActivity.this, "Fail connect to Wi-Fi", getString(R.string.try_again),
                                         getString(R.string.dialog_btn_NEXT), getString(R.string.cont_connection_wifi), new DialogUtils.OnErrorButtonClickListenter() {
                                             @Override
                                             public void okClick() {
