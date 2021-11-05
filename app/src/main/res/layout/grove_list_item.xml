@@ -13,10 +13,10 @@
 
     <RelativeLayout
         android:layout_width="120dp"
-        android:layout_height="162dp"
+        android:layout_height="183dp"
         android:elevation="8dp">
 
-       <!-- <ImageView
+        <!-- <ImageView
             android:id="@+id/grove_image"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -36,12 +36,12 @@
         <cc.seeed.iot.view.FontTextView
             android:id="@+id/grove_text"
             android:layout_width="match_parent"
-            android:layout_height="42dp"
+            android:layout_height="63dp"
             android:layout_alignParentBottom="true"
             android:background="#F5F4F1"
             android:ellipsize="end"
             android:gravity="center"
-            android:maxLines="2"
+            android:maxLines="3"
             android:textColor="#3A4271"
             android:textSize="11sp"
             app:cusTextFont="@string/Proxima_Nova_Regular" />
