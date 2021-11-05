@@ -406,8 +406,8 @@ public class SetupDeviceActivity extends BaseActivity
     }
 
     private void setWifiChange() {
-        DialogUtils.showWarningDialog(this, "Sure to switch Wi-Fi network?", "This process is suggested to keep your Wio device working under a diffrent Wi-Fi network.",
-                "Comfirm", "Cancel", false, new DialogUtils.OnErrorButtonClickListenter() {
+        DialogUtils.showWarningDialog(this, getString(R.string.ask_switch_wifi), getString(R.string.msg_ask_switch_wifi),
+                getString(R.string.ok), getString(R.string.cancel), false, new DialogUtils.OnErrorButtonClickListenter() {
                     @Override
                     public void okClick() {
                         Intent intent = new Intent(SetupDeviceActivity.this, Step01GoReadyActivity.class);
