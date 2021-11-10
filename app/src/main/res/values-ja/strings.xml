@@ -86,5 +86,19 @@
     <string name="dialog_edit_node_name_submit">登録</string>
     <string name="activity_node_setting_delete_device">デバイスを削除</string>
     <string name="activity_setup_device_update_firmware">ファームウェアを更新</string>
+    <string name="help_header">青色LEDはネットワークの状態を示し、デバイスがどのような状態にあるのかを把握するのに役立ちます。</string>
+    <string name="help_footer">問題が解決しないときは、フォーラム(https://forum.seeedstudio.com/)をご参照ください。</string>
+    <string name="help_bean1_title">セットアップモード</string>
+    <string name="help_bean1_msg">青色LEDがふんわりと点滅しているときは、セットアップモードになっています。\nWio Nodeは、Funcボタンを長押しするとセットアップモードになります。</string>
+    <string name="help_bean2_title">IPアドレス要求</string>
+    <string name="help_bean2_msg">青色LEDが2回点滅、1秒消灯のときは、デバイスがルーターにIPアドレスを要求しています。</string>
+    <string name="help_bean3_title">サーバーへ接続</string>
+    <string name="help_bean3_msg">青色LEDが1回点灯、1秒消灯のときは、デバイスがサーバーに接続しようとしています。</string>
+    <string name="help_bean4_title">IPアドレス取得失敗 / サーバー接続エラー</string>
+    <string name="help_bean4_msg">青色LEDが常時点灯しているときは、デバイスがサーバーに接続できませんでした。</string>
+    <string name="help_bean5_title">OTA</string>
+    <string name="help_bean5_msg">青色LEDが点滅しているときは、デバイスはファームウェアを更新しています。</string>
+    <string name="help_bean6_title">オンライン</string>
+    <string name="help_bean6_msg">青色LEDが1秒点灯、1秒消灯のときは、デバイスはサーバーと正常に接続しています。（オンライン）</string>
 
 </resources>

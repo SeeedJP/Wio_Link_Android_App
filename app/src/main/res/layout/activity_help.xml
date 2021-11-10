@@ -27,9 +27,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="19dp"
-                android:layout_marginRight="19dp"
                 android:layout_marginTop="20dp"
-                android:text="Blue led indicates network status, helps dignosing which status your Wio device is at."
+                android:layout_marginRight="19dp"
+                android:text="@string/help_header"
                 android:textColor="#777777"
                 android:textSize="13sp"
                 app:cusTextFont="@string/Proxima_Nova_Regular" />
@@ -49,11 +49,11 @@
             <cc.seeed.iot.view.FontTextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginBottom="20dp"
                 android:layout_marginLeft="19dp"
-                android:layout_marginRight="19dp"
                 android:layout_marginTop="24dp"
-                android:text="If this is still not sloving your problem, check out our Forum (http://seeed.cc/wio) or email us at wio@seeed.cc"
+                android:layout_marginRight="19dp"
+                android:layout_marginBottom="20dp"
+                android:text="@string/help_footer"
                 android:textColor="#777777"
                 android:textSize="13sp"
                 app:cusTextFont="@string/Proxima_Nova_Regular" />

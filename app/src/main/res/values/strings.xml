@@ -99,6 +99,20 @@
     <string name="dialog_edit_node_name_submit">Start Wio-ing</string>
     <string name="activity_node_setting_delete_device">Delete this device</string>
     <string name="activity_setup_device_update_firmware">Update Firmware</string>
+    <string name="help_header">Blue led indicates network status, helps dignosing which status your Wio device is at.</string>
+    <string name="help_footer">If this is still not sloving your problem, check out our Forum (http://seeed.cc/wio) or email us at wio@seeed.cc</string>
+    <string name="help_bean1_title">Setup mode</string>
+    <string name="help_bean1_msg">When blue LED is breathing, your Wio device is under Setup mode and ready to be connected.\nTo set your WIO device to Setup mode, please press and hold Config button for about 4 second for WIO Link, Function button for WIO Node.</string>
+    <string name="help_bean2_title">Requesting IP address from router</string>
+    <string name="help_bean2_msg">When blue LED blinks twice then quickly off for 1 second, your Wio device is requesting IP address from router.\nIt might take up to a minute.</string>
+    <string name="help_bean3_title">Connecting to server</string>
+    <string name="help_bean3_msg">When blue LED blinks once then quickly off for 1 second, your Wio device is connecting to server. It might take up to a minute.</string>
+    <string name="help_bean4_title">Not getting IP / fail connecting to server</string>
+    <string name="help_bean4_msg">When blue LED is constantly on, indicates your Wio device is not getting IP / fail connecting to server.\nPlease check your internet connection and try again from the start.</string>
+    <string name="help_bean5_title">OTA</string>
+    <string name="help_bean5_msg">When blue LED is blinking constantly, your Wio device is updating firware (OTA).\nIt might take up to a minute.</string>
+    <string name="help_bean6_title">Device online</string>
+    <string name="help_bean6_msg">When blue LED is on for 1 second then off for another, your Wio device is online.</string>
 
     <!-- =====Original===== -->
 
