@@ -9,8 +9,8 @@ android {
         minSdkVersion 23
 //        targetSdkVersion 29
         targetSdkVersion 28
-        versionCode 40
-        versionName '2.5.4'
+        versionCode 41
+        versionName '2.5.5'
         multiDexEnabled true
     }
     repositories {
