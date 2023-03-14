@@ -123,7 +123,6 @@ public class NodeListRecyclerAdapter extends RecyclerSwipeAdapter<NodeListRecycl
                 String url = DBHelper.getGroves(pinConfig.sku).get(0).ImageURL; //maybe null
                 ImgUtil.displayImg(holder.mGroveViews.get(i), url, R.mipmap.grove_default);
             } catch (Exception e) {
-                Log.e(TAG, "getGroves:" + e);
                 holder.mGroveViews.get(i).setVisibility(View.GONE);
             }
         }
