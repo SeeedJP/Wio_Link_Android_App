@@ -39,11 +39,29 @@ public class ComparatorUtils {
             Node node1 = (Node) arg0;
             Node node2 = (Node) arg1;
 
-            if (node1.online && !node2.online) {
+            if (node1 == null && node2 == null) {
+                return 0;
+            } else if (node1 != null && node2 == null) {
                 return -1;
-            } else {
+            } else if (node1 == null && node2 != null) {
                 return 1;
             }
+
+            if (node1.online && !node2.online) {
+                return -1;
+            } else if (!node1.online && node2.online) {
+                return 1;
+            }
+
+            if (node1.name == null && node2.name == null) {
+                return 0;
+            } else if (node1.name != null && node2.name == null) {
+                return -1;
+            } else if (node1.name == null && node2.name != null) {
+                return 1;
+            }
+
+            return node1.name.compareTo(node2.name);
         }
     }
 
