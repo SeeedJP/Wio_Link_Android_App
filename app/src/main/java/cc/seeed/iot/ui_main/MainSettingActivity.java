@@ -56,6 +56,8 @@ public class MainSettingActivity extends BaseActivity {
             mTvConnectServer.setText(getString(R.string.server_global));
         } else if (CommonUrl.OTA_CHINA_URL.equals(serverUrl)) {
             mTvConnectServer.setText(getString(R.string.server_chinese));
+        } else if (CommonUrl.OTA_JAPAN_URL.equals(serverUrl)) {
+            mTvConnectServer.setText(getString(R.string.server_japan));
         } else {
             mTvConnectServer.setText(getString(R.string.server_customize)+"\n"+serverUrl);
         }

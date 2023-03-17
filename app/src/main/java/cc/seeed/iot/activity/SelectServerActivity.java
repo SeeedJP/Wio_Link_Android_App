@@ -49,6 +49,10 @@ public class SelectServerActivity extends BaseActivity implements TextWatcher {
     RadioButton mRbChineseServer;
     @InjectView(R.id.mLlChineseServer)
     LinearLayout mLlChineseServer;
+    @InjectView(R.id.mRbJapanServer)
+    RadioButton mRbJapanServer;
+    @InjectView(R.id.mLlJapanServer)
+    LinearLayout mLlJapanServer;
     @InjectView(R.id.mRbCustomizeServer)
     RadioButton mRbCustomizeServer;
     @InjectView(R.id.mLlCustomizeServer)
@@ -89,16 +93,25 @@ public class SelectServerActivity extends BaseActivity implements TextWatcher {
         if (CommonUrl.OTA_INTERNATIONAL_URL.equals(serverUrl)) {
             mRbGlobalServer.setChecked(true);
             mRbChineseServer.setChecked(false);
+            mRbJapanServer.setChecked(false);
             mRbCustomizeServer.setChecked(false);
             mEtCustomServer.setEnabled(false);
         } else if (CommonUrl.OTA_CHINA_URL.equals(serverUrl)) {
             mRbGlobalServer.setChecked(false);
             mRbChineseServer.setChecked(true);
+            mRbJapanServer.setChecked(false);
+            mRbCustomizeServer.setChecked(false);
+            mEtCustomServer.setEnabled(false);
+        } else if (CommonUrl.OTA_JAPAN_URL.equals(serverUrl)) {
+            mRbGlobalServer.setChecked(false);
+            mRbChineseServer.setChecked(false);
+            mRbJapanServer.setChecked(true);
             mRbCustomizeServer.setChecked(false);
             mEtCustomServer.setEnabled(false);
         } else {
             mRbGlobalServer.setChecked(false);
             mRbChineseServer.setChecked(false);
+            mRbJapanServer.setChecked(false);
             mRbCustomizeServer.setChecked(true);
             mEtCustomServer.setEnabled(true);
             if (TextUtils.isEmpty(serverUrl)) {
@@ -110,14 +123,15 @@ public class SelectServerActivity extends BaseActivity implements TextWatcher {
         }
     }
 
-    @OnClick({R.id.mLlGlobalServer, R.id.mLlChineseServer, R.id.mLlCustomizeServer, R.id.mLLSave,
-            R.id.mRbGlobalServer, R.id.mRbChineseServer, R.id.mRbCustomizeServer})
+    @OnClick({R.id.mLlGlobalServer, R.id.mLlChineseServer, R.id.mLlJapanServer, R.id.mLlCustomizeServer, R.id.mLLSave,
+            R.id.mRbGlobalServer, R.id.mRbChineseServer, R.id.mRbJapanServer, R.id.mRbCustomizeServer})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.mRbGlobalServer:
             case R.id.mLlGlobalServer:
                 mRbGlobalServer.setChecked(true);
                 mRbChineseServer.setChecked(false);
+                mRbJapanServer.setChecked(false);
                 mRbCustomizeServer.setChecked(false);
                 mEtCustomServer.setEnabled(false);
                 hideKeyboard(mEtCustomServer);
@@ -129,6 +143,7 @@ public class SelectServerActivity extends BaseActivity implements TextWatcher {
             case R.id.mLlChineseServer:
                 mRbGlobalServer.setChecked(false);
                 mRbChineseServer.setChecked(true);
+                mRbJapanServer.setChecked(false);
                 mRbCustomizeServer.setChecked(false);
                 mEtCustomServer.setEnabled(false);
                 hideKeyboard(mEtCustomServer);
@@ -136,13 +151,26 @@ public class SelectServerActivity extends BaseActivity implements TextWatcher {
                 isChangServer();
                 saveIpAdress();
                 break;
+            case R.id.mRbJapanServer:
+            case R.id.mLlJapanServer:
+                mRbGlobalServer.setChecked(false);
+                mRbChineseServer.setChecked(false);
+                mRbJapanServer.setChecked(true);
+                mRbCustomizeServer.setChecked(false);
+                mEtCustomServer.setEnabled(false);
+                hideKeyboard(mEtCustomServer);
+                changeServer = CommonUrl.OTA_JAPAN_URL;
+                isChangServer();
+                saveIpAdress();
+                break;
             case R.id.mRbCustomizeServer:
             case R.id.mLlCustomizeServer:
-                if (CommonUrl.OTA_INTERNATIONAL_URL.equals(serverUrl) || CommonUrl.OTA_CHINA_URL.equals(serverUrl)) {
+                if (CommonUrl.OTA_INTERNATIONAL_URL.equals(serverUrl) || CommonUrl.OTA_CHINA_URL.equals(serverUrl) || CommonUrl.OTA_JAPAN_URL.equals(serverUrl)) {
                     mEtCustomServer.setText(App.getSp().getString(Constant.SP_HISTORY_IP, ""));
                 }
                 mRbGlobalServer.setChecked(false);
                 mRbChineseServer.setChecked(false);
+                mRbJapanServer.setChecked(false);
                 mRbCustomizeServer.setChecked(true);
                 mEtCustomServer.setEnabled(true);
                 changeServer = mEtCustomServer.getText().toString().trim();
@@ -231,7 +259,9 @@ public class SelectServerActivity extends BaseActivity implements TextWatcher {
                 if (progressDialog != null) {
                     progressDialog.dismiss();
                     saveUrlAndIp(changeServer, ip);
-                    App.getSp().edit().putString(Constant.SP_HISTORY_IP, changeServer).commit();
+                    if (!CommonUrl.OTA_JAPAN_URL.equals(changeServer)) {
+                        App.getSp().edit().putString(Constant.SP_HISTORY_IP, changeServer).commit();
+                    }
                     finish();
                 }
             }

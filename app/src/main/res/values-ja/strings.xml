@@ -3,6 +3,7 @@
     <!--Word-->
     <string name="server_global">グローバル</string>
     <string name="server_chinese">中国</string>
+    <string name="server_japan">日本</string>
     <string name="server_customize">カスタム</string>
     <string name="registration">登録</string>
     <string name="register">登録</string>

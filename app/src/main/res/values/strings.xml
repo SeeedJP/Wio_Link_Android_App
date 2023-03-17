@@ -14,6 +14,7 @@
     <!--Word-->
     <string name="server_global">Global</string>
     <string name="server_chinese">Chinese</string>
+    <string name="server_japan">Japan</string>
     <string name="server_customize">Customize</string>
     <string name="registration">Registration</string>
     <string name="register">Register</string>

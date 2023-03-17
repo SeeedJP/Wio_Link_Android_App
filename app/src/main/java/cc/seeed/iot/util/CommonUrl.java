@@ -10,6 +10,7 @@ public class CommonUrl {
     public static String OTA_INTERNATIONAL_IP = "54.186.73.152";
     public static String OTA_CHINA_URL = "https://cn.wio.seeed.io";
     public static String OTA_CHINA_IP= "120.25.216.117";
+    public static String OTA_JAPAN_URL = "https://wiolink.seeed.co.jp";
     public static String OTA_SERVER_URL = OTA_INTERNATIONAL_URL;
 
 

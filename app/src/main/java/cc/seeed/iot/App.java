@@ -85,9 +85,7 @@ public class App extends com.activeandroid.app.Application {
         ota_server_ip = sp.getString(Constant.SP_SERVER_IP, CommonUrl.OTA_INTERNATIONAL_IP);
         int firstStart = getSp().getInt(Constant.APP_FIRST_START, 0);
         if (firstStart == 0) {
-            if (CommonUrl.OTA_INTERNATIONAL_URL.equals(ota_server_url) || CommonUrl.OTA_CHINA_URL.equals(ota_server_url)) {
-                UserLogic.getInstance().logOut();
-            }
+            UserLogic.getInstance().logOut();
             getSp().edit().putInt(Constant.APP_FIRST_START, 1).commit();
         }
         IotApi.SetServerUrl(ota_server_url);

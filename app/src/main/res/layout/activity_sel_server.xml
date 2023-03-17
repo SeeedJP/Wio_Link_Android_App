@@ -120,6 +120,33 @@
                 android:background="#E7E7E7" />
 
             <LinearLayout
+                android:id="@+id/mLlJapanServer"
+                android:layout_width="match_parent"
+                android:layout_height="53dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:id="@+id/mRbJapanServer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <cc.seeed.iot.view.FontTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="15dp"
+                    android:text="@string/server_japan"
+                    android:textColor="#333333"
+                    android:textSize="16sp"
+                    app:cusTextFont="@string/Proxima_Nova_Regular" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="#E7E7E7" />
+
+            <LinearLayout
                 android:id="@+id/mLlCustomizeServer"
                 android:layout_width="match_parent"
                 android:layout_height="53dp"

@@ -160,6 +160,8 @@ public class LoginAndRegistActivity extends BaseActivity implements ViewPager.On
             mTvSelectServer.setText(getString(R.string.server_global));
         } else if (CommonUrl.OTA_CHINA_URL.equals(serverUrl)) {
             mTvSelectServer.setText(getString(R.string.server_chinese));
+        } else if (CommonUrl.OTA_JAPAN_URL.equals(serverUrl)) {
+            mTvSelectServer.setText(getString(R.string.server_japan));
         } else {
             mTvSelectServer.setText(getString(R.string.server_customize));
             mLLOrtherLogin.setVisibility(View.GONE);
