@@ -13,7 +13,6 @@
 
     <!--Word-->
     <string name="server_global">Global</string>
-    <string name="server_old_global">Global (old)</string>
     <string name="server_chinese">Chinese</string>
     <string name="server_customize">Customize</string>
     <string name="registration">Registration</string>

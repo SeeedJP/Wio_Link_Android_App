@@ -45,10 +45,6 @@ public class SelectServerActivity extends BaseActivity implements TextWatcher {
     RadioButton mRbGlobalServer;
     @InjectView(R.id.mLlGlobalServer)
     LinearLayout mLlGlobalServer;
-    @InjectView(R.id.mRbOldGlobalServer)
-    RadioButton mRbOldGlobalServer;
-    @InjectView(R.id.mLlOldGlobalServer)
-    LinearLayout mLlOldGlobalServer;
     @InjectView(R.id.mRbChineseServer)
     RadioButton mRbChineseServer;
     @InjectView(R.id.mLlChineseServer)
@@ -89,45 +85,21 @@ public class SelectServerActivity extends BaseActivity implements TextWatcher {
     private void initData() {
         serverUrl = App.getApp().getOtaServerUrl();
         serverBean = SystemLogic.getInstance().getServerBean();
-//        if (serverBean == null || System.currentTimeMillis() / 1000 - serverBean.getReqTime() > 60 * 60 * 24 * 1) {
-//            SystemLogic.getInstance().getServerStopMsg();
-//            dialog = DialogUtils.showProgressDialog(this, null);
-//        } else {
-//            if (System.currentTimeMillis() / 1000 > serverBean.getContent().get(0).getServerEndTime()) {
-//                mLlOldGlobalServer.setVisibility(View.GONE);
-//                if (CommonUrl.OTA_INTERNATIONAL_OLD_URL.equals(serverUrl)) {
-//                    serverUrl = CommonUrl.OTA_INTERNATIONAL_URL;
-//                    saveUrlAndIp(CommonUrl.OTA_INTERNATIONAL_URL, CommonUrl.OTA_INTERNATIONAL_IP);
-//                }
-//            } else {
-//                mLlOldGlobalServer.setVisibility(View.VISIBLE);
-//            }
-//        }
-        mLlOldGlobalServer.setVisibility(View.GONE);
         changeServer = serverUrl;
-        if (CommonUrl.OTA_CHINA_URL.equals(serverUrl) || CommonUrl.OTA_CHINA_OLD_URL.equals(serverUrl)) {
-            mRbChineseServer.setChecked(true);
-            mRbGlobalServer.setChecked(false);
-            mRbCustomizeServer.setChecked(false);
-            mRbOldGlobalServer.setChecked(false);
-            mEtCustomServer.setEnabled(false);
-        } else if (CommonUrl.OTA_INTERNATIONAL_URL.equals(serverUrl)) {
-            mRbChineseServer.setChecked(false);
+        if (CommonUrl.OTA_INTERNATIONAL_URL.equals(serverUrl)) {
             mRbGlobalServer.setChecked(true);
-            mRbOldGlobalServer.setChecked(false);
+            mRbChineseServer.setChecked(false);
             mRbCustomizeServer.setChecked(false);
             mEtCustomServer.setEnabled(false);
-        } else if (CommonUrl.OTA_INTERNATIONAL_OLD_URL.equals(serverUrl)) {
-            mRbChineseServer.setChecked(false);
+        } else if (CommonUrl.OTA_CHINA_URL.equals(serverUrl)) {
             mRbGlobalServer.setChecked(false);
-            mRbOldGlobalServer.setChecked(true);
+            mRbChineseServer.setChecked(true);
             mRbCustomizeServer.setChecked(false);
             mEtCustomServer.setEnabled(false);
         } else {
-            mRbChineseServer.setChecked(false);
             mRbGlobalServer.setChecked(false);
+            mRbChineseServer.setChecked(false);
             mRbCustomizeServer.setChecked(true);
-            mRbOldGlobalServer.setChecked(false);
             mEtCustomServer.setEnabled(true);
             if (TextUtils.isEmpty(serverUrl)) {
                 mEtCustomServer.setText(App.getSp().getString(Constant.SP_HISTORY_IP, ""));
@@ -138,70 +110,43 @@ public class SelectServerActivity extends BaseActivity implements TextWatcher {
         }
     }
 
-    @OnClick({R.id.mLlGlobalServer, R.id.mLlOldGlobalServer, R.id.mLlChineseServer, R.id.mLlCustomizeServer, R.id.mLLSave,
-            R.id.mRbGlobalServer, R.id.mRbOldGlobalServer, R.id.mRbChineseServer, R.id.mRbCustomizeServer})
+    @OnClick({R.id.mLlGlobalServer, R.id.mLlChineseServer, R.id.mLlCustomizeServer, R.id.mLLSave,
+            R.id.mRbGlobalServer, R.id.mRbChineseServer, R.id.mRbCustomizeServer})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.mRbGlobalServer:
             case R.id.mLlGlobalServer:
-                mRbChineseServer.setChecked(false);
                 mRbGlobalServer.setChecked(true);
+                mRbChineseServer.setChecked(false);
                 mRbCustomizeServer.setChecked(false);
-                mRbOldGlobalServer.setChecked(false);
+                mEtCustomServer.setEnabled(false);
+                hideKeyboard(mEtCustomServer);
                 changeServer = CommonUrl.OTA_INTERNATIONAL_URL;
                 isChangServer();
-                mEtCustomServer.setEnabled(false);
-                hideKeyboard(mEtCustomServer);
                 saveIpAdress();
-                break;
-            case R.id.mLlOldGlobalServer:
-            case R.id.mRbOldGlobalServer:
-                mRbChineseServer.setChecked(false);
-                mRbGlobalServer.setChecked(false);
-                mRbOldGlobalServer.setChecked(true);
-                mRbCustomizeServer.setChecked(false);
-                changeServer = CommonUrl.OTA_INTERNATIONAL_OLD_URL;
-                isChangServer();
-                mEtCustomServer.setEnabled(false);
-                hideKeyboard(mEtCustomServer);
-                saveIpAdress();
-                DialogUtils.showWarningDialog(this, null,serverBean.getContent().get(0).getPopText(),null, null,true, new DialogUtils.OnErrorButtonClickListenter() {
-                    @Override
-                    public void okClick() {
-                        finish();
-                    }
-
-                    @Override
-                    public void cancelClick() {
-
-                    }
-                });
                 break;
             case R.id.mRbChineseServer:
             case R.id.mLlChineseServer:
-                mRbChineseServer.setChecked(true);
                 mRbGlobalServer.setChecked(false);
+                mRbChineseServer.setChecked(true);
                 mRbCustomizeServer.setChecked(false);
-                mRbOldGlobalServer.setChecked(false);
-                changeServer = CommonUrl.OTA_CHINA_URL;
                 mEtCustomServer.setEnabled(false);
                 hideKeyboard(mEtCustomServer);
+                changeServer = CommonUrl.OTA_CHINA_URL;
                 isChangServer();
                 saveIpAdress();
                 break;
             case R.id.mRbCustomizeServer:
             case R.id.mLlCustomizeServer:
-                if (CommonUrl.OTA_CHINA_URL.equals(serverUrl) || CommonUrl.OTA_INTERNATIONAL_URL.equals(serverUrl)) {
+                if (CommonUrl.OTA_INTERNATIONAL_URL.equals(serverUrl) || CommonUrl.OTA_CHINA_URL.equals(serverUrl)) {
                     mEtCustomServer.setText(App.getSp().getString(Constant.SP_HISTORY_IP, ""));
                 }
-                mRbChineseServer.setChecked(false);
                 mRbGlobalServer.setChecked(false);
+                mRbChineseServer.setChecked(false);
                 mRbCustomizeServer.setChecked(true);
                 mEtCustomServer.setEnabled(true);
-                mRbOldGlobalServer.setChecked(false);
                 changeServer = mEtCustomServer.getText().toString().trim();
                 isChangServer();
-
                 break;
             case R.id.mLLSave:
                 hideKeyboard(mEtCustomServer);
@@ -263,14 +208,12 @@ public class SelectServerActivity extends BaseActivity implements TextWatcher {
     }
 
     public void saveIpAdress() {
-        if (CommonUrl.OTA_CHINA_URL.equals(changeServer)) {
-            saveUrlAndIp(CommonUrl.OTA_CHINA_URL, CommonUrl.OTA_CHINA_IP);
-            finish();
-        } else if (CommonUrl.OTA_INTERNATIONAL_URL.equals(changeServer)) {
+        if (CommonUrl.OTA_INTERNATIONAL_URL.equals(changeServer)) {
             saveUrlAndIp(CommonUrl.OTA_INTERNATIONAL_URL, CommonUrl.OTA_INTERNATIONAL_IP);
             finish();
-        } else if (CommonUrl.OTA_INTERNATIONAL_OLD_URL.equals(changeServer)) {
-            saveUrlAndIp(CommonUrl.OTA_INTERNATIONAL_OLD_URL, CommonUrl.OTA_INTERNATIONAL_OLD_IP);
+        } else if (CommonUrl.OTA_CHINA_URL.equals(changeServer)) {
+            saveUrlAndIp(CommonUrl.OTA_CHINA_URL, CommonUrl.OTA_CHINA_IP);
+            finish();
         } else {
             if (!RegularUtils.isWebsite(changeServer)) {
                 App.showToastShrot(getString(R.string.website_format_error));

@@ -2,7 +2,6 @@
 
     <!--Word-->
     <string name="server_global">グローバル</string>
-    <string name="server_old_global">グローバル(旧)</string>
     <string name="server_chinese">中国</string>
     <string name="server_customize">カスタム</string>
     <string name="registration">登録</string>

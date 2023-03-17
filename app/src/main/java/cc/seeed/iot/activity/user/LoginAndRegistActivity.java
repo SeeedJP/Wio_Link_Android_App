@@ -156,12 +156,10 @@ public class LoginAndRegistActivity extends BaseActivity implements ViewPager.On
         MobclickAgent.onResume(this);
         String serverUrl = App.getApp().getOtaServerUrl();
         mLLOrtherLogin.setVisibility(View.VISIBLE);
-        if (CommonUrl.OTA_CHINA_URL.equals(serverUrl)) {
-            mTvSelectServer.setText(getString(R.string.server_chinese));
-        } else if (CommonUrl.OTA_INTERNATIONAL_URL.equals(serverUrl)) {
+        if (CommonUrl.OTA_INTERNATIONAL_URL.equals(serverUrl)) {
             mTvSelectServer.setText(getString(R.string.server_global));
-        } else if (CommonUrl.OTA_INTERNATIONAL_OLD_URL.equals(serverUrl)) {
-            mTvSelectServer.setText(getString(R.string.server_old_global));
+        } else if (CommonUrl.OTA_CHINA_URL.equals(serverUrl)) {
+            mTvSelectServer.setText(getString(R.string.server_chinese));
         } else {
             mTvSelectServer.setText(getString(R.string.server_customize));
             mLLOrtherLogin.setVisibility(View.GONE);

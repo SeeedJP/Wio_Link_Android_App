@@ -925,36 +925,6 @@ public class MainScreenActivity extends BaseActivity
 
     private void checkServerTip() {
         String serverUrl = App.getApp().getOtaServerUrl();
-        if (CommonUrl.OTA_INTERNATIONAL_OLD_URL.equals(serverUrl)) {
-            final SharedPreferences sp = App.getSp();
-            long reqTime = sp.getLong(Constant.SP_APP_SERVER_REQ_TIME, 0);
-            boolean remindAgain = sp.getBoolean(Constant.SP_APP_SERVER_REMIND_AGAIN, true);
-            if (reqTime == 0 || reqTime < TimeUtils.getStartTime()) {
-                SystemLogic.getInstance().getServerStopMsg();
-                ServerBean serverBean = SystemLogic.getInstance().getServerBean();
-                if (serverBean == null && serverBean.getContent().get(0) != null) {
-                    return;
-                }
-                ServerBean.ContentBean contentBean = serverBean.getContent().get(0);
-                if (contentBean.getPopStartTime() < System.currentTimeMillis() / 1000) {
-                    dialog = DialogUtils.showWarningDialog(this, null, contentBean.getPopText(), null, null, true, null);
-                } else {
-                    if (remindAgain)
-                        dialog = DialogUtils.showWarningDialog(this, null, contentBean.getPopText(), null, "Dont't remind me again", true, new DialogUtils.OnErrorButtonClickListenter() {
-                            @Override
-                            public void okClick() {
-
-                            }
-
-                            @Override
-                            public void cancelClick() {
-                                sp.edit().putBoolean(Constant.SP_APP_SERVER_REMIND_AGAIN, false).commit();
-                            }
-                        });
-                }
-            }
-            sp.edit().putLong(Constant.SP_APP_SERVER_REQ_TIME, System.currentTimeMillis() / 1000).commit();
-        }
     }
 
 

@@ -67,17 +67,6 @@ public class WelcomeActivity extends BaseActivity {
 
     private void setServer() {
         String serverUrl = App.getApp().getOtaServerUrl();
-        if (CommonUrl.OTA_INTERNATIONAL_OLD_URL.equals(serverUrl)) {
-            ServerBean serverBean = SystemLogic.getInstance().getServerBean();
-            if (serverBean == null) {
-                SystemLogic.getInstance().getServerStopMsg();
-            } else {
-                if (System.currentTimeMillis() / 1000 > serverBean.getContent().get(0).getServerEndTime()) {
-                    App.getApp().saveUrlAndIp(CommonUrl.OTA_INTERNATIONAL_URL, CommonUrl.OTA_INTERNATIONAL_IP);
-                    UserLogic.getInstance().logOut();
-                }
-            }
-        }
     }
 
 
